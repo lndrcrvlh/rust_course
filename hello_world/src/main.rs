@@ -1,44 +1,11 @@
 fn main() {
-    
-    let mut value = 0b1111_0101u8;
+    let a = 13;
+    let b = 2.3;
+    let c: f32= 120.0;
 
-    println!("Value is {}", value);
-    println!("the value is {:08b}", value);
+    let average = ((((a as f32 + b as f32 + c)/ 3 as f32) as f64)*10.0).round()/10.0;
 
-    value = !value;
 
-    println!("Value is {}", value);
-    println!("the value is {:08b}", value);
-
-    value = value & 0b1111_0111;
-
-    println!("Value is {}", value);
-    println!("the value is {:08b}", value);
-
-    println!("bit 6 is {}", value & 0b0100_0000);
-
-    value = value | 0b0100_0000;
-    println!("Value is {}", value);
-    println!("the value is {:08b}", value);
-
-    println!("bit 6 is {}", value & 0b0100_0000);
-
-    value = value ^ 0b0101_0101;
-    println!("Value is {}", value);
-    println!("the value is {:08b}", value);
-    
-    value = value << 4;
-    println!("Value after left shift 4 times {}", value);
-    println!("the value is {:08b}", value);
-
-    value = value >> 2;
-    println!("Value after right shift 2 times {}", value);
-    println!("the value is {:08b}", value);
-
-    value = value >> 2;
-    println!("Value after right shift 2 more times {}", value);
-    println!("the value is {:08b}", value);
-    value = value >> 2;
-    println!("Value after right shift 2 more times {}", value);
-    println!("the value is {:08b}", value);
+    assert_eq!(average, 45.1);
+    println!("Test passed!");
 }
