@@ -1,12 +1,22 @@
+use rand::Rng;
+
 fn main() {
-    let celsius_temp = 23.0;
-    let farenheit_temp = celsius_to_farenheit(celsius_temp);
+    let mut rng = rand::thread_rng();
 
-    assert_eq!(farenheit_temp,73.4);
-    println!("Test passed!")
+    let n1: u8 = rng.gen();
+    let n2: u16 = rng.gen();
+    println!("Random u8: {}", n1);
+    println!("Random u16: {}", n2);
+    println!("Random u32: {}", rng.gen::<u32>());
+    println!("Random i32: {}", rng.gen::<i32>());
+    println!("Random float: {}", rng.gen::<f64>());
 }
 
+// fn main() {
+//     let x = 33;
 
-fn celsius_to_farenheit(temp: f64) -> f64 {
-    (temp * 1.8) + 32.0
-}
+//     if x == 3{
+//         println!("x is 3");
+//     }
+// }
+
