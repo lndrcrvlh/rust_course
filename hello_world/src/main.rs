@@ -1,13 +1,9 @@
 fn main(){
     let mut count = 0;
+    let letters = ['a','b','c'];
 
-    let result = loop {
-        if count == 10{
-            break count * 10;
-        }
+    while count < letters.len() {
+        println!("{}",letters[count]);
         count += 1;
-        println!("{}",count);
-
-    };
-    println!("looped, result is {}", result);
+    }
 }
